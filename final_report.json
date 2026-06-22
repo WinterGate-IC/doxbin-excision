@@ -1,0 +1,30 @@
+{
+  "generation": 0,
+  "stats": {
+    "total": 0,
+    "success": 0,
+    "fail": 0,
+    "by_method": {
+      "ssh_exploit": {
+        "attempts": 0,
+        "success": 0
+      },
+      "state_flood": {
+        "attempts": 0,
+        "success": 0
+      },
+      "web_flood": {
+        "attempts": 0,
+        "success": 0
+      }
+    },
+    "by_target": {},
+    "by_port": {},
+    "bursts": 3,
+    "packets": 300,
+    "infections": 0,
+    "endpoints": "{'185.53.179.200:80'}",
+    "vulns": "set()"
+  },
+  "payload_perf": {}
+}
