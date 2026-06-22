@@ -6,21 +6,9 @@
 
 ## 📌 Overview
 
-**Doxbin** is a platform that has enabled doxing, swatting, identity theft, harassment, and violence coordination for over a decade. It has been used to target judges, prosecutors, military personnel, journalists, and private citizens worldwide.
+**Doxbin** is a platform that has enabled doxing, swatting, identity theft, harassment, and violence coordination for over a decade. It has been used to target judges, prosecutors, military personnel, journalists, and private citizens worldwide. Despite occasional takedowns, it reappears under new ownership, facilitated by a fragmented network of malicious actors.
 
 This repository is a **public intelligence resource** – documenting the criminality, infrastructure, and threat posed by Doxbin to national security.
-
----
-
-## 🎯 Purpose
-
-- **Document** Doxbin's history, crimes, and patterns of abuse
-- **Expose** its origin infrastructure, hosting providers, and evasion tactics
-- **Map** its subdomains, API endpoints, and security protections
-- **Provide** actionable evidence for law enforcement, policymakers, and hosting providers
-- **Raise awareness** of the threat to democratic institutions and public safety
-
-**This is not an attack. This is accountability.**
 
 ---
 
@@ -45,76 +33,51 @@ This repository is a **public intelligence resource** – documenting the crimin
 
 ---
 
-## 🕵️ Technical Analysis – What We Unmasked
+## 🧾 Doxbin's "Transparency" – A Criminal Cover
 
-### Origin Servers (Real IPs)
+Doxbin maintains a facade of legitimacy through a "Transparency Report" and a "Law Enforcement Policy." These are not evidence of good faith – they are a calculated legal shield designed to create plausible deniability while the platform continues to facilitate crime.
 
-- 185.53.179.200 – Germany – Primary origin server
-- 185.53.179.145 – Germany – Secondary origin server
-- 104.26.4.226 – Cloudflare – CDN/Proxy
-- 104.26.5.226 – Cloudflare – CDN/Proxy
+**The Reality:**
 
-### Subdomains Discovered
+- Doxbin's policies are selectively enforced. Content that aligns with the platform's extremist user base is rarely removed.
+- The "Transparency Report" is a marketing tool, not a genuine accountability mechanism.
+- Doxbin's operators have repeatedly demonstrated that their own policies are disregarded when it serves their interests.
+- The platform is governed by a fragmented underground collective, not a legitimate entity – which explains why ownership shifts so easily.
 
-- www.doxbin.com
-- mail.doxbin.com
-- cpanel.doxbin.com
-- whm.doxbin.com
-- cp.doxbin.com
-- ftp.doxbin.com
-- ns1.doxbin.com
-- ns2.doxbin.com
-- ssh.doxbin.com
-- git.doxbin.com
-- api.doxbin.com
-- admin.doxbin.com
-- dashboard.doxbin.com
-- panel.doxbin.com
-- portal.doxbin.com
+**This is not a platform with flawed policies. This is a criminal enterprise masquerading as a legitimate service.**
 
-### Security Protections
+---
 
-- **Cloudflare:** DDoS mitigation, bot management, rate limiting
-- **Turnstile:** Cloudflare CAPTCHA (sitekey: 0x4AAAAAADgl1DWaCGN1UWZN)
-- **Content Security Policy:** `unsafe-eval` allowed, `unsafe-inline` for styles
-- **State-Table Firewalls:** Vulnerable to SYN floods
+## 🔗 Links to Violent Extremism & Criminal Groups
 
-### Vulnerabilities Identified
+### Atomwaffen Division
 
-| Vulnerability | Endpoint | Status |
-|---------------|----------|--------|
-| Reflected XSS | /search | Confirmed |
-| Stored XSS | /api/user/comment/create | Confirmed (4,940 injections) |
-| SQL Injection | /search | Confirmed (error-based) |
-| API Misconfiguration | /api/index/pastes | Returns HTML instead of JSON |
-| Weak Session Management | All | Tokens persist without rotation |
+Doxbin has been directly linked to the Atomwaffen Division, a neo-Nazi terrorist group designated in multiple countries. In July 2020, federal prosecutors confirmed that the group maintains Doxbin to list past and potential swatting targets. John William Kirby Kelley, a 19-year-old who pleaded guilty to conspiracy to make interstate threats, maintained Doxbin as a storehouse of information about government officials, journalists, and others targeted for swatting. Kelley, along with Atomwaffen leader John Cameron Denton, used the site to coordinate swatting attacks against a historically Black church, the home of then-Homeland Security Secretary Kirstjen Nielsen, and ProPublica. Atomwaffen members have also been arrested for plotting terrorist attacks and murder. [citation:2][citation:7]
 
-### Network Layer Vulnerabilities
+### Insanity Security Team (IST)
 
-| Vector | Success Rate | Impact |
-|--------|--------------|--------|
-| SYN Flood | 100% | State table exhaustion |
-| SYN-ACK Flood | 100% | State table exhaustion |
-| RST Storm | 100% | State table exhaustion |
+The Insanity Security Team version of Doxbin is a dox pasting archive that explicitly states it has a **"strict no removing dox policy"** without a court order. It admits it is completely legal only if information is not obtained illegally. The site claims immunity under Section 230 of the Communications Decency Act while knowingly hosting illegally obtained and malicious content. [citation:1]
 
-### Observed Errors
+---
 
-- 403 Forbidden on `/api/index/pastes` (returns HTML not JSON)
-- 404 Not Found on `/static/orange.gif`, `/static/banner.jpg`, `/favicon.ico`
-- MIME type errors on `/static/inter.css` (returns HTML instead of CSS)
-- Turnstile sandbox errors in iframes
-- JavaScript errors when API returns HTML instead of JSON
+## 🕵️ Observed Criminal Activities
+
+### Spain – Doxing of Government and Military Personnel
+
+In March 2026, the personal data of hundreds of Spanish judges and prosecutors – including full names, DNI numbers, personal mobile phone numbers, and professional email addresses – was published on Doxbin. An individual was arrested in May 2026 for leaking sensitive information related to members of critical state institutions, including the State Attorney General's Office, INCIBE, the National Police, the Civil Guard, and the National Security Council. The Spanish National Police stated the case was treated as a national security risk. [citation:3][citation:8]
+
+### Previous Law Enforcement Actions
+
+Doxbin was seized in November 2014 as part of Operation Onymous, an international police initiative. The site was restored under different ownership within a week. Operators have since admitted to hosting the site on the clearnet and darknet, keeping links secret to "keep it secure and out of the reach of incompetent people using it for malice things." [citation:4][citation:9]
 
 ---
 
 ## 📂 Repository Contents
 
-| Folder | Contents |
-|--------|----------|
-| `DOXBIN_INTELLIGENCE.md` | Complete raw intelligence dossier |
-| `NATIONAL_SECURITY_ALERT.md` | Legal warning and threat assessment |
-| `reports/` | Archived intelligence reports |
-| `logs/` | Redacted logs |
+- `DOXBIN_INTELLIGENCE.md` – Complete technical dossier (origin servers, subdomains, endpoints, vulnerabilities, errors)
+- `NATIONAL_SECURITY_ALERT.md` – Legal warning and threat assessment
+- `reports/` – Archived intelligence reports
+- `logs/` – Redacted logs
 
 All data is **redacted** to protect sensitive information.
 
@@ -141,7 +104,7 @@ All data is **redacted** to protect sensitive information.
 
 ## ⚖️ Disclaimer
 
-This repository is intended for **educational, research, and awareness purposes** only. All information is derived from publicly available sources and has been redacted to protect privacy. The authors do not condone or encourage any illegal activity.
+This repository is intended for **educational, research, and awareness purposes** only. All information is derived from publicly available sources. The authors do not condone or encourage any illegal activity.
 
 ---
 
@@ -150,7 +113,5 @@ This repository is intended for **educational, research, and awareness purposes*
 *Documentation. Awareness. Accountability.*
 
 – **WinterGate IC Command**
-
----
 
 **Repository:** [https://github.com/WinterGate-IC/doxbin-excision](https://github.com/WinterGate-IC/doxbin-excision)
